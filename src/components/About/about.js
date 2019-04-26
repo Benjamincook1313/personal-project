@@ -94,7 +94,7 @@ class About extends Component {
                   {addPost &&
                     <div className='add-post'>
                       <input 
-                        className='post-title'
+                        className='edit-title'
                         placeholder='Title'
                         onChange={this.handleChange}
                         name='title'
@@ -102,7 +102,7 @@ class About extends Component {
                         type='text'
                         />
                       <input 
-                        className='post-image'
+                        className='edit-image'
                         placeholder='image_url'
                         onChange={this.handleChange}
                         name='imageUrl'
@@ -110,7 +110,7 @@ class About extends Component {
                         type='text'
                         />
                       <input 
-                        className='post-info'
+                        className='edit-info'
                         placeholder='info'
                         onChange={this.handleChange}
                         name='text'
@@ -150,7 +150,7 @@ class About extends Component {
             {/* <div className='left'></div> */}
             { post }
             {!posts[0] &&
-            <div className='hidden' style={{height: 200}}></div>
+            <div className='hidden' style={{height: 200, zIndex: '-100'}}></div>
             }
             <footer style={{backgroundColor: 'skyblue'}}></footer>
       </div>

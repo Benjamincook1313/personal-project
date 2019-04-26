@@ -93,7 +93,7 @@ class Info extends Component {
                   {addPost &&
                     <div className='add-post'>
                       <input 
-                        className='post-title'
+                        className='edit-title'
                         placeholder='title'
                         onChange={this.handleChange}
                         name='title'
@@ -101,7 +101,7 @@ class Info extends Component {
                         type='text'
                         />
                       <input 
-                        className='post-image'
+                        className='edit-image'
                         placeholder='image_url'
                         onChange={this.handleChange}
                         name='imageUrl'
@@ -109,7 +109,7 @@ class Info extends Component {
                         type='text'
                         />
                       <input 
-                        className='post-info'
+                        className='edit-info'
                         placeholder='info'
                         onChange={this.handleChange}
                         name='text'
