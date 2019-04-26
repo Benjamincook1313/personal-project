@@ -5,9 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { bars } from '@fortawesome/react-fontawesome'
 import { connect } from 'react-redux'
 import { toggleLogin, displayMenu } from '../../Ducks/reducer'
-// import MapContainer from '../Home/GoogleMap/MapContainer'
-// import { Mailer } from 'nodemailer-react'
-// import { Texter } from './Send_sms'
+// import MapContainer from '../Home/MapContainer'
 
 class Home extends Component {
   constructor(props){

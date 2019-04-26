@@ -6,6 +6,7 @@ const authCtrl = require('./Controller/authCtrl')
 const app = express ()
 const Ctrl = require('./Controller/controller')
 
+
 const { SERVER_PORT, CONNECTION_STRING, SESSION_SECRET } = process.env
 
 massive(CONNECTION_STRING).then(db => {
@@ -15,6 +16,7 @@ massive(CONNECTION_STRING).then(db => {
 })
 
 app.use(express.json())
+app.use( express.static( `${__dirname}/../build` ) );
 app.use(session({
   secret: SESSION_SECRET,
   resave: false,
@@ -23,6 +25,7 @@ app.use(session({
     maxAge: 1000 * 60 * 60
   }
 }))
+
 
 // check for sesison
 app.get('/checkForUser', Ctrl.checkForUser)
