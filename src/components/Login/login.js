@@ -24,7 +24,6 @@ class Login extends Component {
     const { userName, password } = this.state
     const res = await axios.post('/auth/login', { userName, password })
     .catch(err => console.log(err))
-    console.log(res)
     if(res.data.loggedIn) { 
       this.props.toggleLogin()
       return this.props.history.push('/admin')

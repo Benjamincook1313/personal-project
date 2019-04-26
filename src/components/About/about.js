@@ -78,7 +78,7 @@ class About extends Component {
           delete={ this.deletePost } 
           handleChange={ this.handleChange }
           saveEdit={ this.saveEdit }
-          addPost={addPost}
+          addPost={ addPost }
           />
       )
     })
@@ -118,7 +118,7 @@ class About extends Component {
                         type='text'
                         />
                       <button className='addPost-x' onClick={() => this.setState({addPost: false})}>X</button>
-                      <button onClick={() => this.addAboutPost({title, imageUrl, text})}>Save</button>
+                      <button onClick={() => this.addAboutPost({ title, imageUrl, text })}>Save</button>
                     </div>
                   }
                 </div>

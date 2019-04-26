@@ -374,7 +374,7 @@ footer{
   display: flex;
   justify-content: space-around;
   position: absolute;
-  top: 40px;
+  top: 35px;
   width: 110px;
 }
 .post{
@@ -615,9 +615,7 @@ footer{
     border: none;
     background: none;
   }
-  .menu:hover {
-    color: black;
-  }
+  
   .drop-menu {
     box-shadow: 10px 15px 20px rgb(0,0,0.02);
     display: flex;

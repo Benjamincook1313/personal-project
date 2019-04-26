@@ -37,7 +37,7 @@ app.put('/api/about/edit/:id', Ctrl.editAboutPost)
 app.delete('/api/about/deletePost/:id', Ctrl.deleteAboutPost)
 
 // Services
-app.get('/api/services/posts', Ctrl.getServicePosts)
+app.get('/api/services/posts', Ctrl.getServicesPosts)
 app.post('/api/addServicesPost', Ctrl.addServicesPost)
 app.put('/api/services/edit/:id', Ctrl.editServicesPost)
 app.delete('/api/services/deletePost/:id', Ctrl.deleteServicePost)
@@ -45,7 +45,7 @@ app.delete('/api/services/deletePost/:id', Ctrl.deleteServicePost)
 // Information
 app.get('/api/info/posts', Ctrl.getInfoPosts)
 app.post('/api/addInfoPost', Ctrl.addInfoPost)
-
+app.put('/api/info/edit/:id', Ctrl.editInfoPost)
 app.delete('/api/info/deletePost/:id', Ctrl.deleteInfoPost)
 
 // Admin

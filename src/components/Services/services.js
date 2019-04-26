@@ -77,7 +77,7 @@ class Services extends Component {
           delete={ this.deletePost } 
           handleChange={ this.handleChange }
           saveEdit={ this.saveEdit }
-          addPost={addPost}
+          addPost={ addPost }
           />
       )
     })

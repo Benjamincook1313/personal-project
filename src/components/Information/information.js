@@ -46,7 +46,7 @@ class Info extends Component {
   }
 
   saveEdit = async (id, info)=>{
-    const res = await axios.put(`/api/about/edit/${id}`, info)
+    const res = await axios.put(`/api/info/edit/${id}`, info)
     this.setState({
       posts: res.data
     })
@@ -77,7 +77,7 @@ class Info extends Component {
           delete={ this.deletePost } 
           handleChange={ this.handleChange }
           saveEdit={ this.saveEdit }
-          addPost={addPost}
+          addPost={ addPost }
           />
       )
     })
