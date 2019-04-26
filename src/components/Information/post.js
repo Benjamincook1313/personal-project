@@ -73,7 +73,8 @@ class InfoPost extends Component {
           onChange={(e) => this.setState({text: e.target.value})}
         />
         <button className='edit-x' onClick={() => this.editFalse()}>X</button>
-        <button onClick={() => this.props.saveEdit(post.about_id, { title: this.state.title, imageUrl: this.state.imageUrl, text: this.state.text }).then(this.setState({edit: false}))}>Save</button>
+        <button onClick={() => this.props.saveEdit(post.about_id, { title: this.state.title, imageUrl: this.state.imageUrl, text: this.state.text })
+        .then(this.setState({edit: false}))}>Save</button>
       </div>
     )
   }

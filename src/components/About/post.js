@@ -52,27 +52,29 @@ class AboutPost extends Component {
       <div className='edit-post'>
         <input 
           className='edit-title'
-          placeholder={post.title}
+          placeholder={ post.title }
           name='title'
-          value={this.state.title}
-          onChange={(e) => this.setState({imageUrl: e.target.value})}
+          value={ this.state.title }
+          onChange={(e) => this.setState({title: e.target.value})}
         />
         <input 
           className='edit-image'
-          placeholder={post.image_url}
+          placeholder={ post.image_url }
           name='imageUrl'
-          value={this.state.imageUrl}
+          value={ this.state.imageUrl }
           onChange={(e) => this.setState({imageUrl: e.target.value})}
         />
         <input 
           className='edit-info'
-          placeholder={post.info}
+          placeholder={ post.info }
           name='text'
-          value={this.state.text}
-          onChange={(e) => this.setState({imageUrl: e.target.value})}
+          value={ this.state.text }
+          onChange={ (e) => this.setState({ text: e.target.value })}
         />
-        <button className='edit-x' onClick={() => this.editFalse()}>X</button>
-        <button onClick={() => this.props.saveEdit(post.about_id, { title: this.state.title, imageUrl: this.state.imageUrl, text: this.state.text }).then(this.setState({edit: false}))}>Save</button>
+        <button className='edit-x' onClick={ () => this.editFalse() }>X</button>
+        <button onClick={ () => this.props.saveEdit(post.service_id, { title: this.state.title, imageUrl: this.state.imageUrl, text: this.state.text })
+          .then(this.setState({ edit: false }))}>Save
+        </button>
       </div>
     )
   }
