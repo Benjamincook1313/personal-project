@@ -109,7 +109,6 @@ class Home extends Component {
           <div><h2 className='locate'>Location</h2></div>
           <div className='location'>
             <img className='map' src='' alt=''/>
-            {/* apiKey: (YOUR_GOOGLE_API_KEY_GOES_HERE) */}
             {/* <MapContainer /> */}
 
             <div className='address-info'>
