@@ -41,7 +41,6 @@ class Home extends Component {
   submitReqInfo = async ()=>{
     const { firstName, lastName, email, phone, timeToCall } = this.state
     await axios.post('/api/reqAppointment', { firstName, lastName, email, phone, timeToCall })
-    // { Texter }
     this.setState({
       showReqAppt: false,
       firstName: '',
@@ -50,6 +49,7 @@ class Home extends Component {
       phone: '',
       timeToCall: ''
     })
+    window.alert('Your Request has been sent')
   }
 
   logOut=()=>{

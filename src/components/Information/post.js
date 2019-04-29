@@ -33,8 +33,12 @@ class InfoPost extends Component {
       !edit ?
       <div>
         <div className='post' style={{border: '2px solid black'}}>
+          <div className='post-info'>
+            <img className='post-image' src={ post.image_url } alt=''/>
+          </div>
           <div className='post-title'>
-            <h1>{ post.title }</h1>
+            <h1 style={{borderBottom: '3px solid gray'}}>{ post.title }</h1>
+            <p className='post-text' >{ post.info }</p>
             {(this.props.loggedIn && !this.props.addPost) &&
               <div className='about-btns'>
                 <button className='edit-btn' onClick={() => this.editTrue()}>edit</button>
@@ -43,10 +47,6 @@ class InfoPost extends Component {
                 >delete</button>
               </div>
             }
-          </div>
-          <div className='post-info'>
-            <img className='post-image' src={ post.image_url } alt=''/>
-            <p className='post-text' >{ post.info }</p>
           </div>
         </div>
       </div>:
