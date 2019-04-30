@@ -256,7 +256,10 @@ nav {
   border: none;
   background: none;
   color: white;
-  font-size: 1em;
+  font-size: .8em;
+}
+.x:hover {
+  font-size: 1em
 }
 .submit {
   margin: 10px;
@@ -264,6 +267,9 @@ nav {
   border-radius: 5px;
   color: blue;
   font-weight: bold
+}
+.submit:hover {
+  font-size: .69em;
 }
 
 footer{
@@ -356,6 +362,9 @@ footer{
   font-weight: bold;
   z-index: 1;
 }
+.add-post-btn:hover {
+  font-size: .75em;
+}
 .add-post {
   display: flex;
   flex-direction: column;
@@ -390,7 +399,7 @@ footer{
   display: flex;
   justify-content: space-around;
   position: absolute;
-  top: -10px;
+  top: 0px;
   right: 15px;
   width: 130px;
 }
@@ -597,6 +606,9 @@ footer{
   background: none;
   text-decoration: none;
 }
+.delete-btn:hover {
+  font-weight: bold;
+}
 .edit-btn {
   position: relative;
   right: 20px;
@@ -604,6 +616,9 @@ footer{
   background: none;
   color: blue;
   text-decoration: none;
+}
+.edit-btn:hover {
+  font-weight: bold;
 }
 
 .info-left {
@@ -793,5 +808,13 @@ footer{
   }
   .service-post {
     margin: 0px
+  }
+}
+@media(max-width: 350px){
+  .bio {
+    height: unset;
+  }
+  .bio-container {
+    height: unset
   }
 }

@@ -23,6 +23,7 @@ class App extends Component {
   async componentDidMount(){
     let res = await axios.get('/checkForUser')
     if(res.data) this.props.toggleLogin()
+    if(!res.data) return
   }
 
   render() {

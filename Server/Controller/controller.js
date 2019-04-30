@@ -1,9 +1,26 @@
 require('dotenv').config()
-const { AUTHTOKEN, ACCOUNTSID } = process.env
+const { AUTHTOKEN, ACCOUNTSID, EMAIL, PASSWORD } = process.env
 
 const accountSid = ACCOUNTSID
 const authToken = AUTHTOKEN
 const client = require('twilio')(accountSid, authToken);
+
+const nodemailer = require ('nodemailer')
+let transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: EMAIL,
+    pass: PASSWORD
+  }
+})
+
+let mailOptions = {
+  from : 'mydentalwebsite595',
+  to: 'benjamincook1313@gmail.com, ',
+  subject: 'Appointment Request',
+  text: 'You have 1 new request to schedule an appontment! '
+}
+
 
 module.exports = {
   checkForUser: (req, res) => {
@@ -109,6 +126,13 @@ client.messages
    })
   .then(message => console.log(message.sid));
     res.status(200).send('Request succesful')
-  },
 
+    transporter.sendMail(mailOptions, function(err, data) {
+      if(err) {
+        console.log('Error sending email')
+      }else{
+        console.log('Email sent!!!')
+      }
+    })
+  },
 }
