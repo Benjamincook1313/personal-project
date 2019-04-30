@@ -75,9 +75,9 @@ class Home extends Component {
     return(
       <div className='Home'>
         <nav>
-          <h1 className='title'>Bruce A. Pyper <div className='dmd'>DMD</div></h1>
+          <h1 className='title'>Dr. Dentist <div className='dmd'>DMD</div></h1>
           <div className='nav-container'>
-            <h1 className='number'>(801) 590-8740</h1>
+            <h1 className='number'>(123) 456-7890 {/*(801) 590-8740*/}</h1>
             {this.props.loggedIn &&
             <div>
               <Link to='/admin' style={{textDecoration: 'none'}}><div className='nav'>Admin</div></Link>
@@ -113,10 +113,10 @@ class Home extends Component {
 
             <div className='address-info'>
               <h1 className='address'>Address</h1>
-              <h2 >999 E. Murray Holladay Rd.</h2>
-              <h3 >Suite #205</h3>
-              <h2 >Salt Lake City, Ut</h2>
-              <h3 >84117</h3>
+              <h2 >123 E. Rainbow Rd.</h2>
+              {/* <h3 >Suite #205</h3> */}
+              <h2 >Some Where, Earth</h2>
+              <h3 >12345</h3>
             </div>
           </div>
           <section className='home-display'>
@@ -124,7 +124,7 @@ class Home extends Component {
           <div className='bio'>
             <img className='bio-img'src='https://images.pexels.com/photos/1323867/pexels-photo-1323867.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500' alt='img'/>
             <div className='bio-container'>
-              <h1 className='name'>Bruce A Pyper</h1>
+              <h1 className='name'>Dr. Dentist</h1>
               <h2 className='family'>Family & Cosmetic dentistry</h2>
               <p className='bio-text'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             </div>

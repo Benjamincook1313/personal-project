@@ -46,12 +46,12 @@ class Contact extends Component {
           </nav>
           <div className='hidden-nav'></div>
           <section className='contact'>
-            <div className='contact-info'>Phone: <h1>(801) 590-8740</h1></div>
+            <div className='contact-info'>Phone: <h1>(123) 456-7890 {/*(801) 590-8740*/}</h1></div>
             <div className='contact-info'>
               Address: 
-              <h1>999 E. Murray Holiday Rd.</h1>
-              <h1>Salt Lake City, Ut 84117</h1> 
-              <p>#205</p>
+              <h1>666 E. Rainbow Rd.</h1>
+              <h1>Some Where Over the Rainbow, Oz 12345</h1> 
+              {/* <p>#205</p> */}
             </div>
             <div className='contact-info'>
               Hours: <h1 className='hours'>Mon, Tues, Thurs:</h1>
@@ -61,7 +61,6 @@ class Contact extends Component {
               <h1>Sat, Sun, Wed: </h1>
               <p>(closed)</p>
             </div>
-            {/* <div className='contact-info'>Email: <h1>bruceapyper<div>@email.com</div></h1></div> */}
           </section>
 
           <footer></footer>
