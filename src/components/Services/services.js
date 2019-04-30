@@ -117,7 +117,7 @@ class Services extends Component {
                         type='text'
                         />
                       <button className='addPost-x' onClick={() => this.setState({addPost: false})}>X</button>
-                      <button onClick={() => this.addServicesPost({title, imageUrl, text})}>Save</button>
+                      <button className='save-btn' onClick={() => this.addServicesPost({title, imageUrl, text})}>Add</button>
                     </div>
                   }
                 </div>

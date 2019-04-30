@@ -289,6 +289,13 @@ footer{
   position: fixed;
   top: 0px;
 }
+.login-btn {
+  background-color: white;
+  border-radius: 5px;
+}
+.login-btn:hover {
+  font-weight: bold
+}
 .login {
   height: 20px;
   position: absolute;
@@ -395,6 +402,15 @@ footer{
   width: 100vw;
   background-color: black;
 }
+.save-btn {
+  background-color: gainsboro;
+  border-radius: 5px;
+  font-weight: bold;
+}
+.save-btn:hover {
+  background-color: white;
+}
+
 .about-btns {
   display: flex;
   justify-content: space-around;
@@ -419,10 +435,10 @@ footer{
 }
 .post-title{
   position: relative;
-  /* text-decoration-line: underline; */
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
+
   flex-direction: column;
   color: gray;
   z-index: 0;
@@ -631,6 +647,11 @@ footer{
 }
 .info-footer {
   background-color: aqua;
+}
+.info-post-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 @media(max-width: 900px){

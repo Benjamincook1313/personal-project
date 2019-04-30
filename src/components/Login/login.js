@@ -27,7 +27,7 @@ class Login extends Component {
     if(res.data.loggedIn) { 
       this.props.toggleLogin()
       return this.props.history.push('/admin')
-    }
+    } 
   }
 
   async logOut(){
@@ -56,7 +56,7 @@ class Login extends Component {
     return(
       <div className='login-page'>
         <nav className='Login'>
-          <h1 className='title'>Dr. Bruce A. Pyper D.M.D.</h1>
+          <h1 className='title'>Dr. Dentist DMD</h1>
           <div className='nav-container'>
             <Link to='/' style={{textDecoration: 'none'}}><div className='nav'>Home</div></Link>
             <Link to='/about' style={{textDecoration: 'none'}}><div className='nav'>About</div></Link>
@@ -72,7 +72,7 @@ class Login extends Component {
             <input placeholder='user name' onChange={this.handleChange} name='userName' value={userName}/>
             <input placeholder='password' onChange={this.handleChange} name='password' value={password}/>
           </div>
-            <button onClick={() => this.login(userName, password)}>Login</button>
+            <button className='login-btn' onClick={() => this.login(userName, password)}>login</button>
             {/* <button onClick={() => this.registerUser(userName, password)}>Register</button> */}
         </div>
       </div>

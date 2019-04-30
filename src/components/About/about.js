@@ -118,7 +118,7 @@ class About extends Component {
                         type='text'
                         />
                       <button className='addPost-x' onClick={() => this.setState({addPost: false})}>X</button>
-                      <button onClick={() => this.addAboutPost({ title, imageUrl, text })}>Save</button>
+                      <button className='save-btn' onClick={() => this.addAboutPost({ title, imageUrl, text })}>Add</button>
                     </div>
                   }
                 </div>

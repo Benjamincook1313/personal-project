@@ -36,15 +36,13 @@ class InfoPost extends Component {
           <div className='post-info'>
             <img className='post-image' src={ post.image_url } alt=''/>
           </div>
-          <div className='post-title'>
-            <h1 style={{borderBottom: '3px solid gray'}}>{ post.title }</h1>
+          <div className='info-post-title'>
+            <h1 style={{borderBottom: '3px solid gray', marginBottom: '30px', color: 'gray'}}>{ post.title }</h1>
             <p className='post-text' >{ post.info }</p>
             {(this.props.loggedIn && !this.props.addPost) &&
               <div className='about-btns'>
                 <button className='edit-btn' onClick={() => this.editTrue()}>edit</button>
-                <button className='delete-btn'
-                  onClick={() => this.props.delete(post.info_id)}
-                >delete</button>
+                <button className='delete-btn' onClick={() => this.props.delete(post.info_id)}>delete</button>
               </div>
             }
           </div>
