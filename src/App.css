@@ -451,7 +451,8 @@ footer{
   margin: 20px;
 }
 .post-text {
-  margin: 10px 50px;
+  text-align: center;
+  margin: 20px;
   font-size: 1.3em;
 }
 .edit-post {

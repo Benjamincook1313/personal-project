@@ -37,7 +37,7 @@ class InfoPost extends Component {
             <img className='post-image' src={ post.image_url } alt=''/>
           </div>
           <div className='info-post-title'>
-            <h1 style={{borderBottom: '3px solid gray', marginBottom: '30px', color: 'gray'}}>{ post.title }</h1>
+            <h1 style={{textDecoration: 'underline', position: 'relative', top: 20, marginBottom: 20}}>{ post.title }</h1>
             <p className='post-text' >{ post.info }</p>
             {(this.props.loggedIn && !this.props.addPost) &&
               <div className='about-btns'>
