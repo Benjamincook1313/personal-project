@@ -40,7 +40,7 @@ class InfoPost extends Component {
             <h1 style={{textDecoration: 'underline', position: 'relative', top: 20, marginBottom: 20}}>{ post.title }</h1>
             <p className='post-text' >{ post.info }</p>
             {(this.props.loggedIn && !this.props.addPost) &&
-              <div className='about-btns'>
+              <div className='info-btns'>
                 <button className='edit-btn' onClick={() => this.editTrue()}>edit</button>
                 <button className='delete-btn' onClick={() => this.props.delete(post.info_id)}>delete</button>
               </div>

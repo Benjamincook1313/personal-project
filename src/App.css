@@ -646,6 +646,10 @@ footer{
   width: 200px;
   height: 100vh;
 }
+.info-btns {
+  position: absolute;
+  right: 30px;
+}
 .info-footer {
   background-color: aqua;
 }
