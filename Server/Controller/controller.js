@@ -6,6 +6,7 @@ const authToken = AUTHTOKEN
 const client = require('twilio')(accountSid, authToken);
 
 const nodemailer = require ('nodemailer')
+
 let transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
@@ -15,10 +16,10 @@ let transporter = nodemailer.createTransport({
 })
 
 let mailOptions = {
-  from : 'mydentalwebsite595',
-  to: 'benjamincook1313@gmail.com, ',
+  from : EMAIL,
+  to: 'benjamincook1313@gmail.com',
   subject: 'Appointment Request',
-  text: 'You have 1 new request to schedule an appontment! '
+  text: 'You have 1 new request to schedule an appontment!'
 }
 
 
@@ -127,7 +128,7 @@ client.messages
   .then(message => console.log(message.sid));
     res.status(200).send('Request succesful')
 
-    transporter.sendMail(mailOptions, function(err, data) {
+    transporter.sendMail(mailOptions, function(err) {
       if(err) {
         console.log('Error sending email')
       }else{

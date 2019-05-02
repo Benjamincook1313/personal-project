@@ -76,8 +76,8 @@ class Home extends Component {
       <div className='Home'>
         <nav>
           <h1 className='title'>Dr. Dentist <div className='dmd'>DMD</div></h1>
+          <h1 className='number'>(123) 456-7890 {/*(801) 590-8740*/}</h1>
           <div className='nav-container'>
-            <h1 className='number'>(123) 456-7890 {/*(801) 590-8740*/}</h1>
             {this.props.loggedIn &&
             <div>
               <Link to='/admin' style={{textDecoration: 'none'}}><div className='nav'>Admin</div></Link>

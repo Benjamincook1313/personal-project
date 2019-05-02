@@ -61,6 +61,8 @@ nav {
 .nav-container {
   display: flex;
   margin-right: 50px;
+  justify-content: center;
+  align-items: center;
 }
 .title {
   margin-left: 50px;
@@ -74,7 +76,7 @@ nav {
 .number {
   position: absolute;
   right: 140px;
-  margin-top: -9px;
+  margin-top: -25px;
   color: blue;
   opacity: .8;
 }
@@ -85,10 +87,16 @@ nav {
   margin-top: 20px;
   color: white;
   width: 90px;
-  height: 4vh;
+  height: 35px;
   background-color: black;
   text-decoration: none;
-  border-right: 1px solid gray;
+  border-right: 2px solid gray;
+}
+.nav:active {
+  background-color: gray;
+  height: 32px;
+  width: 85px;
+  margin: 20 5px
 }
 .nav:hover{
   background-color: gray;
@@ -97,6 +105,7 @@ nav {
 .hidden-nav{
   height: 75px;
   width: 100%;
+  z-index: -1000;
 }
 
 .bryce {
@@ -148,6 +157,12 @@ nav {
   height: 28px;
   width: 202px;
   font-size: .73em;
+  /* background-color: rgb(247, 247, 247); */
+}
+.req-apt:active {
+  height: 25px;
+  width: 200px;
+  font-size: .7em;
 }
 
 .bio {
@@ -434,11 +449,11 @@ footer{
   max-width: 200px;
 }
 .post-title{
+  text-decoration: underline;
   position: relative;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-
   flex-direction: column;
   color: gray;
   z-index: 0;
@@ -653,10 +668,20 @@ footer{
 .info-footer {
   background-color: aqua;
 }
-.info-post-title {
+.info-post-image {
+  max-width: 200px;
+}
+.info-post-text-title {
   display: flex;
-  flex-direction: column;
   align-items: center;
+  flex-direction: column;
+  color: gray;
+  z-index: 0;
+}
+.info-title {
+  text-decoration: underline;
+  position: absolute;
+  top: 10px;
 }
 
 @media(max-width: 900px){
@@ -766,13 +791,13 @@ footer{
   }
   .post {
     margin: 20px;
+    /* display: flex;
+    flex-direction: column; */
+
   }
-  .post-info {
-    display: flex;
-    flex-direction: column;
-  }
+  
   .post-text {
-    margin: 0px;
+    margin: 20px;
   }
   .post-title {
     display: flex;
@@ -788,8 +813,29 @@ footer{
   }
 }
 @media(max-width: 646px){
+  .post-info {
+    display: flex;
+    flex-direction: column;
+  }
   .did-you-know {
     height: unset;
+  }
+  .post {
+    display: flex;
+    flex-direction: column;
+  }
+  .info-title {
+    text-decoration: underline;
+    position: absolute;
+    top: 10px;
+  }
+  .post-title {
+    text-decoration: underline;
+    position: absolute;
+    top: 10px;
+  }
+  .info-post-image {
+    margin-top: 50px;
   }
 }
 @media(max-width: 556px){
@@ -807,7 +853,7 @@ footer{
     margin-left: 20px;
   }
   .menu {
-    right: 5%;
+    /* right: 5%; */
   }
   .map {
     max-width: 95%;
@@ -815,9 +861,7 @@ footer{
   footer {
     width: 100%;
   }
-  .drop-menu {
-    right: 0px;
-  }
+  
 }
 @media(max-width: 476px){
   .dmd {
@@ -827,13 +871,20 @@ footer{
     right: 0px;
   }
   nav {
-    width: 100%;
+    position: fixed;
+    top: 0px;
   }
-  .s-post {
-    margin: 20px 0px;
+  .service-post-info {
+    width: unset;
   }
   .service-post {
-    margin: 0px
+    margin: 20px 0px;
+    width: unset;
+  }
+  .Services {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 }
 @media(max-width: 350px){
@@ -842,5 +893,8 @@ footer{
   }
   .bio-container {
     height: unset
+  }
+  .info-title {
+    font-size: 1.7em;
   }
 }

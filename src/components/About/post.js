@@ -31,16 +31,16 @@ class AboutPost extends Component {
     const { edit } = this.state
     return (
       !edit ?
-      <div>
-        <div className='post'>
+      <div className='info-post' style={{position: 'relative'}}>
+        <div className='post-info'>
           <div className='post-info'>
-            <img className='post-image' src={ post.image_url } alt=''/>
+            <img className='info-post-image' src={ post.image_url } alt=''/>
           </div>
-          <div className='post-title'>
-          <h1 style={{borderBottom: '3px solid gray'}}>{ post.title }</h1>
+          <div className='info-post-text-title'>
+          <h1 className='post-title'>{ post.title }</h1>
           <p className='post-text' >{ post.info }</p>
             {(this.props.loggedIn && !this.props.addPost) &&
-              <div className='about-btns'>
+              <div className='info-btns'>
                 <button className='edit-btn' onClick={() => this.editTrue()}>edit</button>
                 <button className='delete-btn' onClick={() => this.props.delete(post.about_id)}>delete</button>
               </div>

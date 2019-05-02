@@ -31,13 +31,13 @@ class InfoPost extends Component {
     const { edit } = this.state
     return (
       !edit ?
-      <div>
-        <div className='post' style={{border: '2px solid black'}}>
+      <div className='info-post' style={{position: 'relative'}}>
+        <div className='post-info' style={{border: '2px solid black'}}>
           <div className='post-info'>
-            <img className='post-image' src={ post.image_url } alt=''/>
+            <img className='info-post-image' src={ post.image_url } alt=''/>
           </div>
-          <div className='info-post-title'>
-            <h1 style={{textDecoration: 'underline', position: 'relative', top: 20, marginBottom: 20}}>{ post.title }</h1>
+          <div className='info-post-text-title'>
+            <h1 className='info-title'>{ post.title }</h1>
             <p className='post-text' >{ post.info }</p>
             {(this.props.loggedIn && !this.props.addPost) &&
               <div className='info-btns'>
