@@ -18,7 +18,7 @@ class Contact extends Component {
     return(
       <div className='Contact'>
         <nav>
-            <h1 className='title'>Contact</h1>
+            <h1 className='page-title'>Contact</h1>
             <div className='nav-container'>
               {this.props.loggedIn &&
               <div>
@@ -46,19 +46,19 @@ class Contact extends Component {
           </nav>
           <div className='hidden-nav'></div>
           <section className='contact'>
-            <div className='contact-info'>Phone: <h1>(123) 456-7890 {/*(801) 590-8740*/}</h1></div>
+            <div className='contact-info'>Phone: <h1>(801) 590-8740</h1></div>
             <div className='contact-info'>
               Address: 
-              <h1>666 E. Rainbow Rd.</h1>
-              <h1>Some Where Over the Rainbow, Oz 12345</h1> 
-              {/* <p>#205</p> */}
+              <h1>999 E. Murray Holladay Rd.</h1>
+              <h1>Salt Lake City, Ut 84117</h1> 
+              <h2>#205</h2>
             </div>
             <div className='contact-info'>
-              Hours: <h1 className='hours'>Mon, Tues, Thurs:</h1>
+              Hours: <h1 className='hours'>Mon, Tues, Thurs</h1>
               <p>(8:30am-5:00pm)</p>
               <h1>Fri: </h1>
               <p>(7:30am-2:00pm)</p>
-              <h1>Sat, Sun, Wed: </h1>
+              <h1>Wed, Sat, Sun </h1>
               <p>(closed)</p>
             </div>
           </section>

@@ -10,7 +10,7 @@ class Schedule extends Component {
             Name: <h1>{ appt.first_name }{ appt.last_name }</h1>
             Email: <h1>{ appt.email }</h1>
             Phone: <h1>{ appt.phone }</h1>
-            Time To Call: <h1>{ appt.time_to_call }</h1>
+            Message: <h1>{ appt.time_to_call }</h1>
           </div>
           <button className='admin-delete' onClick={() => this.props.delete(appt.id)}>delete</button>
         </div>

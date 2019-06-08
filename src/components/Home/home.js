@@ -7,6 +7,11 @@ import { connect } from 'react-redux'
 import { toggleLogin, displayMenu } from '../../Ducks/reducer'
 // import MapContainer from '../Home/MapContainer'
 
+import Bryce from '../Images/Carousel/bryce.jpeg';
+import Mthood from '../Images/Carousel/mt-hood.jpeg';
+import Dusk from '../Images/Carousel/mountains-at-dusk.jpeg';
+import Door from '../Images/Carousel/office-door.jpeg';
+
 class Home extends Component {
   constructor(props){
     super(props)
@@ -17,15 +22,11 @@ class Home extends Component {
       email: '',
       phone: '',
       timeToCall: '',
-      img: [
-        'https://images.unsplash.com/photo-1529680539753-739e7c203c55?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80',
-        'https://images.unsplash.com/photo-1499336315816-097655dcfbda?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2110&q=80',
-        'https://images.unsplash.com/photo-1537118169787-d32386cdd0a8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80'
-      ]
     }
   }
 
   handleInfo=(e)=>{
+
     let {name, value } = e.target
     this.setState({
       [name]: value
@@ -74,34 +75,63 @@ class Home extends Component {
     const { showReqAppt, firstName, lastName, email, phone, timeToCall } = this.state
     return(
       <div className='Home'>
-        <nav>
-          <h1 className='title'>Dr. Dentist <div className='dmd'>DMD</div></h1>
-          <h1 className='number'>(123) 456-7890 {/*(801) 590-8740*/}</h1>
-          <div className='nav-container'>
-            {this.props.loggedIn &&
-            <div>
-              <Link to='/admin' style={{textDecoration: 'none'}}><div className='nav'>Admin</div></Link>
-              <button className='login' onClick={this.logOut} >Log out</button>
+        {/* Navigation */}
+          <nav>
+            <h1 className='title'>Dr. Bruce A Pyper 
+              <div className='dmd'>DMD</div>
+              <div className='sub-title'>Family & Cosmetic Dentistry</div>
+            </h1>
+            <h1 className='number'>(801) 590-8740</h1>
+            <div className='nav-container'>
+              {this.props.loggedIn &&
+              <div>
+                <Link to='/admin' style={{textDecoration: 'none'}}><div className='nav'>Admin</div></Link>
+                <button className='login' onClick={this.logOut} >Log out</button>
+              </div>
+              }
+              <Link to='/about' style={{textDecoration: 'none'}}><div className='nav'>About</div></Link>
+              <Link to='/contact' style={{textDecoration: 'none'}}><div className='nav'>Contact</div></Link>
+              <Link to='/services' style={{textDecoration: 'none'}}><div className='nav'>Services</div></Link>
+              <Link to='/information' style={{textDecoration: 'none'}}><div className='nav'>Information</div></Link>
+              <button className='menu' onClick={() => this.props.displayMenu()}><FontAwesomeIcon icon='bars' /></button>
             </div>
+            {this.props.menu &&
+              <div className='drop-menu'>
+                <Link to='/about' style={{textDecoration: 'none'}}><div className='drop-nav'>About</div></Link>
+                <Link to='/contact' style={{textDecoration: 'none'}}><div className='drop-nav'>Contact</div></Link>
+                <Link to='/services' style={{textDecoration: 'none'}}><div className='drop-nav'>Services</div></Link>
+                <Link to='/information' style={{textDecoration: 'none'}}><div className='drop-nav'>Information</div></Link>
+              </div>
             }
-            <Link to='/about' style={{textDecoration: 'none'}}><div className='nav'>About</div></Link>
-            <Link to='/contact' style={{textDecoration: 'none'}}><div className='nav'>Contact</div></Link>
-            <Link to='/services' style={{textDecoration: 'none'}}><div className='nav'>Services</div></Link>
-            <Link to='/information' style={{textDecoration: 'none'}}><div className='nav'>Information</div></Link>
-            <button className='menu' onClick={() => this.props.displayMenu()}><FontAwesomeIcon icon='bars' /></button>
-          </div>
-          {this.props.menu &&
-            <div className='drop-menu'>
-              <Link to='/about' style={{textDecoration: 'none'}}><div className='drop-nav'>About</div></Link>
-              <Link to='/contact' style={{textDecoration: 'none'}}><div className='drop-nav'>Contact</div></Link>
-              <Link to='/services' style={{textDecoration: 'none'}}><div className='drop-nav'>Services</div></Link>
-              <Link to='/information' style={{textDecoration: 'none'}}><div className='drop-nav'>Information</div></Link>
+          </nav>
+          <div className='hidden-nav' style={{height: 65}}></div>
+        {/* Navigation End */}
+
+
+
+        {/* Hero Image */}         
+
+          <div id="carouselExampleSlidesOnly" className="bryce" data-ride="carousel">
+            <div className="carousel-inner">
+              <div className="carousel-item active">
+                <img className="d-block w-100" src={Door} alt="First slide" data-interval='10000'></img>
+              </div>
+              <div className="carousel-item">
+                <img className="d-block w-100" src={Mthood} alt="Second slide"></img>
+              </div>
+              <div className="carousel-item">
+                <img className="d-block w-100" src={Dusk} alt="Third slide"></img>
+              </div>
+              <div className="carousel-item">
+                <img className="d-block w-100" src={Bryce} alt="Fourth slide"></img>
+              </div>
             </div>
-          }
-        </nav>
-          <div className='bryce' >
-            <img className='carousel-img'src={this.carousel()} alt=''/>
           </div>
+
+        {/* Hero Image End */}
+
+
+
           <section className='did-you-know'>
             <h3 className='did'>Did you know regular cleanings are crucial to having healthy teeth?</h3>
             <button className='req-apt' onClick={() => this.setState({showReqAppt: !showReqAppt})}>REQUEST AN APPOINTMENT</button>
@@ -109,14 +139,12 @@ class Home extends Component {
           <div><h2 className='locate'>Location</h2></div>
           <div className='location'>
             <img className='map' src='' alt=''/>
-            {/* <MapContainer /> */}
-
             <div className='address-info'>
               <h1 className='address'>Address</h1>
-              <h2 >123 E. Rainbow Rd.</h2>
-              {/* <h3 >Suite #205</h3> */}
-              <h2 >Some Where, Earth</h2>
-              <h3 >12345</h3>
+              <h2 >999 E Murray Holladay Rd.</h2>
+              <h3 >Suite #205</h3>
+              <h2 >Salt Lake City, Utah</h2>
+              <h3 >84117</h3>
             </div>
           </div>
           <section className='home-display'>
@@ -124,8 +152,8 @@ class Home extends Component {
           <div className='bio'>
             <img className='bio-img'src='https://images.pexels.com/photos/1323867/pexels-photo-1323867.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500' alt='img'/>
             <div className='bio-container'>
-              <h1 className='name'>Dr. Dentist</h1>
-              <h2 className='family'>Family & Cosmetic dentistry</h2>
+              <h1 className='name'>Bruce A. Pyper</h1>
+              {/* <h2 className='family'>Family & Cosmetic dentistry</h2> */}
               <p className='bio-text'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             </div>
           </div>
@@ -159,10 +187,10 @@ class Home extends Component {
                 name='phone' 
                 value={phone} 
                 type='text' />
-              <h3>When to call</h3>
+              <h3>Message</h3>
               <input 
                 onChange={this.handleInfo}
-                placeholder='       monday 3 - 5'
+                placeholder=''
                 name='timeToCall'
                 value={timeToCall}
                 type='text'
@@ -172,7 +200,7 @@ class Home extends Component {
           </section>
         }
         <div className='pic'></div>
-        <footer style={{backgroundColor: 'rgb(255, 169, 78)'}} >COME SEE US!</footer>
+        <footer style={{backgroundColor: 'rgb(31, 31, 31)'}} >COME SEE US!</footer>
       </div>
     )
   }

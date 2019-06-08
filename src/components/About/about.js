@@ -85,7 +85,7 @@ class About extends Component {
     return(
       <div className='About'>
         <nav>
-            <h1 className='title'>About</h1>
+            <h1 className='page-title'>About</h1>
             <div className='nav-container'>
               {this.props.loggedIn &&
                 <div>

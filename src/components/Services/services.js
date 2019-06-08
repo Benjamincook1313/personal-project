@@ -84,7 +84,7 @@ class Services extends Component {
     return(
       <div className='Services'>
         <nav>
-            <h1 className='title'>Services</h1>
+            <h1 className='page-title'>Services</h1>
             <div className='nav-container'>
               {this.props.loggedIn &&
                 <div>
