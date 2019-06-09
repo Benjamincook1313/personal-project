@@ -38,7 +38,7 @@ class Admin extends Component {
     return(
       <div >
         <nav>
-          <h1 className='title'>Admin</h1>
+          <h1 className='page-title'>Admin</h1>
           <div className='nav-container'>
             <div className='hidden-nav'></div>
             <button className='login' onClick={this.logOut} >Log out</button>

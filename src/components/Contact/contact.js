@@ -19,15 +19,12 @@ class Contact extends Component {
       <div className='Contact'>
         <nav>
             <h1 className='page-title'>Contact</h1>
+            <h1 className='number'>(801) 590-8740</h1>
             <div className='nav-container'>
               {this.props.loggedIn &&
               <div>
                 <Link to='/admin' style={{textDecoration: 'none'}}><div className='nav'>Admin</div></Link>
-                <button className='login' onClick={this.LogOut} >Log out</button>
               </div>
-              }
-              {!this.props.loggedIn &&
-                <Link to='/login' style={{textDecoration: 'none'}}><button className='login'>Login</button></Link>
               }
               <Link to='/' style={{textDecoration: 'none'}}><div className='nav'>Home</div></Link>
               <Link to='/about' style={{textDecoration: 'none'}}><div className='nav'>About</div></Link>
@@ -44,22 +41,32 @@ class Contact extends Component {
             </div>
           }
           </nav>
+
           <div className='hidden-nav'></div>
+
           <section className='contact'>
-            <div className='contact-info'>Phone: <h1>(801) 590-8740</h1></div>
-            <div className='contact-info'>
-              Address: 
-              <h1>999 E. Murray Holladay Rd.</h1>
-              <h1>Salt Lake City, Ut 84117</h1> 
-              <h2>#205</h2>
-            </div>
-            <div className='contact-info'>
-              Hours: <h1 className='hours'>Mon, Tues, Thurs</h1>
-              <p>(8:30am-5:00pm)</p>
-              <h1>Fri: </h1>
-              <p>(7:30am-2:00pm)</p>
-              <h1>Wed, Sat, Sun </h1>
-              <p>(closed)</p>
+            <div className='contact-infoWrapper'>
+              <div className='phone-addressWrapper'>
+                <div className='contact-info'>
+                  <h1>Phone</h1> 
+                  <h2>(801) 590-8740</h2>
+                </div>
+                <div className='contact-info'>
+                  <h1>Address</h1>
+                  <h2>999 E. Murray Holladay Rd.</h2>
+                  <h2>Salt Lake City, Ut 84117</h2 > 
+                  <p>#205</p>
+                </div>
+              </div>
+              <div className='contact-info'>
+                <h1>Hours</h1>
+                <h2>Mon, Tues, Thurs</h2>
+                <p>(8:30am-5:00pm)</p>
+                <h2> Fri: </h2>
+                <p>(7:30am-2:00pm)</p>
+                <h2>Wed, Sat, Sun </h2>
+                <p>(closed)</p>
+              </div>
             </div>
           </section>
 

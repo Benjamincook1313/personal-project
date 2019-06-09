@@ -85,6 +85,7 @@ class Info extends Component {
       <div className='About'>
         <nav>
             <h1 className='page-title'>Information</h1>
+            <h1 className='number'>(801) 590-8740</h1>
             <div className='nav-container'>
               {this.props.loggedIn &&
                 <div>
@@ -140,7 +141,7 @@ class Info extends Component {
               </div>
             }
           </nav>
-            <div className='hidden-nav' ></div>
+            <div className='hidden-nav' style={{height: 120}}></div>
             <div className='add-post-section' style={{backgroundColor: 'rgb(255, 169, 78)'}}>
               {this.props.loggedIn && 
                 <button className='add-post-btn' onClick={() => this.setState({addPost: !this.state.addPost})}>Add Post</button>
@@ -150,7 +151,6 @@ class Info extends Component {
             {!posts[0] &&
             <div className='hidden' style={{height: 200}}></div>
             }
-            <footer style={{backgroundColor: 'rgb(255, 169, 78)'}}></footer>
       </div>
     )
   }

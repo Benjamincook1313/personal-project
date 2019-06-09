@@ -6,6 +6,8 @@ import { toggleLogin, displayMenu } from '../../Ducks/reducer'
 import { connect } from 'react-redux'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
+
+
 class Services extends Component {
   constructor(){
     super()
@@ -66,7 +68,6 @@ class Services extends Component {
   render(){
     const { posts, addPost, title, imageUrl, text } = this.state
     let post = posts.map((post) => {
-      
       return(
         <ServicesPost 
           key={ post.service_id } 
@@ -84,10 +85,11 @@ class Services extends Component {
     return(
       <div className='Services'>
         <nav>
-            <h1 className='page-title'>Services</h1>
-            <div className='nav-container'>
-              {this.props.loggedIn &&
-                <div>
+          <h1 className='page-title'>Services</h1>
+          <h1 className='number'>(801) 590-8740</h1>
+          <div className='nav-container'>
+            {this.props.loggedIn &&
+              <div>
                   <Link to='/admin' style={{textDecoration: 'none'}}><div className='nav'>Admin</div></Link>
                   <button className='login' onClick={this.logOut} >Log out</button>
                   {addPost &&
@@ -121,27 +123,25 @@ class Services extends Component {
                     </div>
                   }
                 </div>
-              }
-              {!this.props.loggedIn &&
-                <Link to='/login' style={{textDecoration: 'none'}}><button className='login'>Login</button></Link>
-              }
-              <Link to='/' style={{textDecoration: 'none'}}><div className='nav'>Home</div></Link>
-              <Link to='/about' style={{textDecoration: 'none'}}><div className='nav'>About</div></Link>
-              <Link to='/contact' style={{textDecoration: 'none'}}><div className='nav'>Contact</div></Link>
-              <Link to='/information' style={{textDecoration: 'none'}}><div className='nav'>Information</div></Link>
-              <button className='menu' onClick={() => this.props.displayMenu()}><FontAwesomeIcon icon='bars' /></button>
-            </div>
-            {this.props.menu &&
-              <div className='drop-menu'>
+            }
+            <Link to='/' style={{textDecoration: 'none'}}><div className='nav'>Home</div></Link>
+            <Link to='/about' style={{textDecoration: 'none'}}><div className='nav'>About</div></Link>
+            <Link to='/contact' style={{textDecoration: 'none'}}><div className='nav'>Contact</div></Link>
+            <Link to='/information' style={{textDecoration: 'none'}}><div className='nav'>Information</div></Link>
+            <button className='menu' onClick={() => this.props.displayMenu()}><FontAwesomeIcon icon='bars' /></button>
+          </div>
+          {this.props.menu &&
+            <div className='drop-menu'>
               <Link to='/' style={{textDecoration: 'none'}}><div className='drop-nav'>Home</div></Link>
               <Link to='/about' style={{textDecoration: 'none'}}><div className='drop-nav'>About</div></Link>
               <Link to='/contact' style={{textDecoration: 'none'}}><div className='drop-nav'>Contact</div></Link>
               <Link to='/information' style={{textDecoration: 'none'}}><div className='drop-nav'>Information</div></Link>
               </div>
-            }
-          </nav>
-          <div className='hidden-nav'></div>
-          <div className='add-post-section' style={{backgroundColor: 'lightskyblue'}}>
+          }
+        </nav>
+
+          <div className='hidden-nav' style={{height: 120}}></div>
+          <div className='add-post-section' >
             {this.props.loggedIn && 
               <button className='add-post-btn' onClick={() => this.setState({addPost: !this.state.addPost})}>Add Post</button>
             }
@@ -150,7 +150,7 @@ class Services extends Component {
           {!posts[0] &&
             <div className='hidden' style={{height: 200}}></div>
           }
-          <footer style={{backgroundColor: 'lightskyblue'}}></footer>
+          <footer></footer>
       </div>
     )
   }

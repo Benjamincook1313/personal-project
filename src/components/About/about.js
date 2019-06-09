@@ -86,6 +86,7 @@ class About extends Component {
       <div className='About'>
         <nav>
             <h1 className='page-title'>About</h1>
+            <h1 className='number'>(801) 590-8740</h1>
             <div className='nav-container'>
               {this.props.loggedIn &&
                 <div>
@@ -123,9 +124,6 @@ class About extends Component {
                   }
                 </div>
               }
-              {!this.props.loggedIn &&
-                <Link to='/login' style={{textDecoration: 'none'}}><button className='login'>Login</button></Link>
-              }
               <Link to='/' style={{textDecoration: 'none'}}><div className='nav'>Home</div></Link>
               <Link to='/contact' style={{textDecoration: 'none'}}><div className='nav'>Contact</div></Link>
               <Link to='/services' style={{textDecoration: 'none'}}><div className='nav'>Services</div></Link>
@@ -141,18 +139,16 @@ class About extends Component {
             </div>
           }
           </nav>
-            <div className='hidden-nav'></div>
-            <div className='add-post-section' style={{backgroundColor: 'skyblue'}}>
+            <div className='hidden-nav' style={{height: 120}}></div>
+            <div className='add-post-section'>
               {this.props.loggedIn && 
                 <button className='add-post-btn' onClick={() => this.setState({addPost: !this.state.addPost})}>Add Post</button>
               }
             </div>
-            {/* <div className='left'></div> */}
             { post }
             {!posts[0] &&
             <div className='hidden' style={{height: 200, zIndex: '-100'}}></div>
             }
-            <footer style={{backgroundColor: 'skyblue'}}></footer>
       </div>
     )
   }

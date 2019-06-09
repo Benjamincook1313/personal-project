@@ -7,10 +7,12 @@ import { connect } from 'react-redux'
 import { toggleLogin, displayMenu } from '../../Ducks/reducer'
 // import MapContainer from '../Home/MapContainer'
 
-import Bryce from '../Images/Carousel/bryce.jpeg';
-import Mthood from '../Images/Carousel/mt-hood.jpeg';
-import Dusk from '../Images/Carousel/mountains-at-dusk.jpeg';
-import Door from '../Images/Carousel/office-door.jpeg';
+import Bryce from '../Images/Carousel/Bryce.jpeg';
+import Hawaii from '../Images/Carousel/Hawaii.jpeg';
+import Yellowstone from '../Images/Carousel/Yellowstone.jpg';
+import Beach from '../Images/Carousel/Beach.jpeg'
+import Bruce from '../Images/Bruce.jpg'
+import swal from 'sweetalert'
 
 class Home extends Component {
   constructor(props){
@@ -50,7 +52,7 @@ class Home extends Component {
       phone: '',
       timeToCall: ''
     })
-    window.alert('Your Request has been sent')
+    swal('Your Request has been sent')
   }
 
   logOut=()=>{
@@ -75,6 +77,7 @@ class Home extends Component {
     const { showReqAppt, firstName, lastName, email, phone, timeToCall } = this.state
     return(
       <div className='Home'>
+
         {/* Navigation */}
           <nav>
             <h1 className='title'>Dr. Bruce A Pyper 
@@ -107,88 +110,106 @@ class Home extends Component {
           <div className='hidden-nav' style={{height: 65}}></div>
         {/* Navigation End */}
 
-
-
-        {/* Hero Image */}         
-
+          {/* Hero Image */}         
           <div id="carouselExampleSlidesOnly" className="bryce" data-ride="carousel">
             <div className="carousel-inner">
               <div className="carousel-item active">
-                <img className="d-block w-100" src={Door} alt="First slide" data-interval='10000'></img>
+                <img className="d-block w-100" src={Bryce} alt="First slide" data-interval='10000'></img>
               </div>
               <div className="carousel-item">
-                <img className="d-block w-100" src={Mthood} alt="Second slide"></img>
+                <img className="d-block w-100" src={Beach} alt="Second slide"></img>
               </div>
               <div className="carousel-item">
-                <img className="d-block w-100" src={Dusk} alt="Third slide"></img>
+                <img className="d-block w-100" src={Yellowstone} alt="Third slide"></img>
               </div>
               <div className="carousel-item">
-                <img className="d-block w-100" src={Bryce} alt="Fourth slide"></img>
+                <img className="d-block w-100" src={Hawaii} alt="Fourth slide"></img>
               </div>
             </div>
-          </div>
-
-        {/* Hero Image End */}
-
-
-
           <section className='did-you-know'>
-            <h3 className='did'>Did you know regular cleanings are crucial to having healthy teeth?</h3>
-            <button className='req-apt' onClick={() => this.setState({showReqAppt: !showReqAppt})}>REQUEST AN APPOINTMENT</button>
+            <h1 className='did'>Did you know regular cleanings are crucial to having healthy teeth?</h1>
+            <button className='req-apt' onClick={() => this.setState({showReqAppt: !showReqAppt})}>
+              <h2 className='reqAppt-text'>Request an appointment</h2>
+            </button>
           </section>
-          <div><h2 className='locate'>Location</h2></div>
-          <div className='location'>
-            <img className='map' src='' alt=''/>
-            <div className='address-info'>
-              <h1 className='address'>Address</h1>
-              <h2 >999 E Murray Holladay Rd.</h2>
-              <h3 >Suite #205</h3>
-              <h2 >Salt Lake City, Utah</h2>
-              <h3 >84117</h3>
-            </div>
           </div>
-          <section className='home-display'>
-          </section>
+          {/* Hero Image End */}
+
+          {/* LOCATION */}
+          <div className='location'>
+            <h1 className='locate'>Location</h1>
+            <div className='address-info'>
+              <div className="maps">
+                <iframe
+                  src="https://maps.google.com/maps?q=Dr.%20Bruce%20A%20Pyper&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                  width="400"
+                  height="300"
+                  frameBorder="0"
+                  style={{ border: '1px solid rgb(31, 31, 31)' }}
+                  allowFullScreen
+                  title="map"
+                />
+              </div>
+              <div>
+                <h2 >999 E Murray Holladay Rd.</h2>
+                <h2 className='address-text'>Suite #205</h2>
+                <h2 >Salt Lake City, Utah</h2>
+                <h2 className='address-text'>84117 </h2>
+              </div>
+            </div>
+              {/* <img className='map' src={Bigmap} alt=''/> */}
+              {/* <img className='map' src={Map} alt=''/> */}
+              
+          </div>
+          {/* LOCATION END */}
+
+          {/* BIO */}
           <div className='bio'>
-            <img className='bio-img'src='https://images.pexels.com/photos/1323867/pexels-photo-1323867.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500' alt='img'/>
+            <img className='bio-img'src={Bruce} alt='img'/>
             <div className='bio-container'>
               <h1 className='name'>Bruce A. Pyper</h1>
-              {/* <h2 className='family'>Family & Cosmetic dentistry</h2> */}
               <p className='bio-text'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             </div>
           </div>
+          {/* BIO END */}
+
         {showReqAppt &&
           <section className='reqApptInfo'>
-            <h3>First</h3>
+            <h2>First</h2>
               <input 
+                className='reqApptInput'
                 onChange={this.handleInfo} 
-                placeholder='               name'
+                placeholder='name'
                 name='firstName' 
                 value={firstName} 
                 type='text' />
-              <h3>Last</h3>
+              <h2>Last</h2>
               <input 
+                className='reqApptInput'
                 onChange={this.handleInfo} 
-                placeholder='               name'
+                placeholder='name'
                 name='lastName' 
                 value={lastName} 
                 type='text' />
-              <h3>Email</h3>
+              <h2>Email</h2>
               <input 
+                className='reqApptInput'
                 onChange={this.handleInfo} 
                 placeholder='youremail@example.com'
                 name='email' 
                 value={email} 
                 type='text' />
-              <h3>Phone #</h3>
+              <h2>Phone #</h2>
               <input 
+                className='reqApptInput'
                 onChange={this.handleInfo} 
-                placeholder='       (012)345-6789'
+                placeholder='(012) 345-6789'
                 name='phone' 
                 value={phone} 
                 type='text' />
-              <h3>Message</h3>
+              <h2>Message</h2>
               <input 
+                className='reqApptInput'
                 onChange={this.handleInfo}
                 placeholder=''
                 name='timeToCall'
@@ -200,7 +221,7 @@ class Home extends Component {
           </section>
         }
         <div className='pic'></div>
-        <footer style={{backgroundColor: 'rgb(31, 31, 31)'}} >COME SEE US!</footer>
+        <footer style={{backgroundColor: 'rgb(31, 31, 31)'}}>COME SEE US!</footer>
       </div>
     )
   }
