@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-// import axios from 'axios'
 
 class AboutPost extends Component {
   constructor(props){
@@ -31,24 +30,25 @@ class AboutPost extends Component {
     const { edit } = this.state
     return (
       !edit ?
-      <div className='info-post' style={{position: 'relative'}}>
-        <div className='post-info'>
-          <div className='post-info'>
-            <img className='info-post-image' src={ post.image_url } alt=''/>
+      <div className='about' style={{position: 'relative'}}>
+          <h1 className='about-post-title'>{ post.title }</h1>
+          {(this.props.loggedIn && !this.props.addPost) &&
+            <div className='about-info-btns'>
+              <button className='edit-btn' onClick={() => this.editTrue()}>edit</button>
+              <button className='delete-btn' onClick={() => this.props.delete(post.about_id)}>delete</button>
+            </div>
+          }
+        <div className='about-post' >
+          <div>
+            <img className='about-post-image' src={ post.image_url } alt=''/>
           </div>
-          <div className='info-post-text-title'>
-          <h1 className='post-title'>{ post.title }</h1>
-          <p className='post-text' >{ post.info }</p>
-            {(this.props.loggedIn && !this.props.addPost) &&
-              <div className='info-btns'>
-                <button className='edit-btn' onClick={() => this.editTrue()}>edit</button>
-                <button className='delete-btn' onClick={() => this.props.delete(post.about_id)}>delete</button>
-              </div>
-            }
+          <div className='about-post-text-title'>
+          <p className='about-post-text' >{ post.info }</p>
           </div>
         </div>
-        <div className='between-post'></div>
+        <div className='about-between-post'></div>
       </div>:
+
       <div className='edit-post'>
         <input 
           className='edit-title'
@@ -72,8 +72,12 @@ class AboutPost extends Component {
           onChange={ (e) => this.setState({ text: e.target.value })}
         />
         <button className='edit-x' onClick={ () => this.editFalse() }>X</button>
-        <button onClick={ () => this.props.saveEdit(post.about_id, { title: this.state.title, imageUrl: this.state.imageUrl, text: this.state.text })
-          .then(this.setState({ edit: false }))}>Save
+        <button 
+          onClick={ () => this.props.saveEdit(post.about_id, { 
+            title: this.state.title, 
+            imageUrl: this.state.imageUrl, 
+            text: this.state.text 
+            }).then(this.setState({ edit: false }))}>Save
         </button>
       </div>
     )

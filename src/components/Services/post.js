@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-// import axios from 'axios'
+import { Scrollbars } from 'react-custom-scrollbars';
 
 class ServicesPost extends Component {
   constructor(props){
@@ -32,13 +32,14 @@ class ServicesPost extends Component {
     return (
       !edit ?
       <div className='s-post'>
-        <div className='service-post'>
+        <Scrollbars className='service-post' style={{ width: 350, height: 450, display: 'flex', justifyContent: 'center'}} autoHide>
             {(this.props.loggedIn && !this.props.addPost) &&
               <div className='post-btns'>
                 <button className='edit-btn' onClick={ () => this.editTrue() }>edit</button>
                 <button className='delete-btn'
                   onClick={() => this.props.delete(post.service_id)}
-                >delete</button>
+                >delete
+                </button>
               </div>
             }
           <div className='service-post-title'>
@@ -48,7 +49,7 @@ class ServicesPost extends Component {
             <img className='post-image' src={ post.image_url } alt=''/>
             <p className='services-post-text' >{ post.info }</p>
           </div>
-        </div>
+        </Scrollbars>
       </div>:
       <div className='edit-services-post'>
         <input 
