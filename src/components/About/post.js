@@ -42,9 +42,7 @@ class AboutPost extends Component {
           <div>
             <img className='about-post-image' src={ post.image_url } alt=''/>
           </div>
-          <div className='about-post-text-title'>
           <p className='about-post-text' >{ post.info }</p>
-          </div>
         </div>
         <div className='about-between-post'></div>
       </div>:

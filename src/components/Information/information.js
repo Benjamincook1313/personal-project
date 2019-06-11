@@ -85,7 +85,7 @@ class Info extends Component {
       <div className='About'>
         <nav>
             <h1 className='page-title'>Information</h1>
-            <h1 className='number'>(801) 590-8740</h1>
+            <a href='tel:801-834-8095'className='number'>(801) 590-8740</a>
             <div className='nav-container'>
               {this.props.loggedIn &&
                 <div>

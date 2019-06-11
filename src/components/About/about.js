@@ -86,7 +86,7 @@ class About extends Component {
       <div className='About'>
         <nav>
             <h1 className='page-title'>About</h1>
-            <h1 className='number'>(801) 590-8740</h1>
+            <a href='tel:801-834-8095'className='number'>(801) 590-8740</a>
             <div className='nav-container'>
               {this.props.loggedIn &&
                 <div>
@@ -139,7 +139,7 @@ class About extends Component {
             </div>
           }
           </nav>
-            <div className='hidden-nav' style={{height: 120}}></div>
+            <div className='hidden-nav' style={{height: 102}}></div>
             <div className='add-post-section'>
               {this.props.loggedIn && 
                 <button className='add-post-btn' onClick={() => this.setState({addPost: !this.state.addPost})}>Add Post</button>

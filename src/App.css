@@ -27,13 +27,14 @@ button{
 }
 nav {
   position: fixed;
-  height: 75px;
+  height: 60px;
   background-color: whitesmoke;
   width: 100vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 0px;
+  opacity: .9;
   z-index: 100;
 }
 
@@ -42,51 +43,61 @@ nav {
 .menu {
   display: none;
   font-size: 2em;
-  position: fixed;
-  top: -2px;
-  right: 25px;
+  position: absolute;
+  top: 0px;
+  right: 26px;
   color: rgb(31, 31, 31);
   border: none;
   background: none;
 }
 .drop-menu {
-  display: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  position: absolute;
+  top: 60px;
+  right: 15px;
+  height: 133px;
+  width: 90px;
 }
 .drop-nav {
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   height: 32px;
-  width: 90px;
-  background-color: gainsboro;
-  border-top: 1px solid transparent;
+  width: 95px;
+  background-color: whitesmoke;
   color: #6599ff;
+  font-weight: bold;
   margin-top: 1px solid black;
   box-shadow: 5px 5px 3px 0px rgb(128, 128, 128);
 }
+.drop-nav:hover {
+  background-color: rgb(31, 31, 31);
+  color: white;
+}
 .nav-container {
   display: flex;
-  margin-right: 51px;
+  margin-right: 50px;
   justify-content: space-around;
   align-items: center;
-  width: unset;
 }
 .title {
-  width: 400px;
+  width: 258px;
   margin-left: 50px;
-  font-size: 2.2em;
+  font-size: 2.2rem;
   display: flex;
   position: relative;
-  bottom: 14px;
+  bottom: 10px;
   color: rgb(31, 31, 31);
 }
 .sub-title {
+  text-align: center;
   position: absolute;
-  left: 42px;
-  top: 45px;
-  font-size: .5em;
+  top: 40px;
+  font-size: 1.1rem;
   color: #6599ff;
-  width: 255px;
+  width: 258px;
 }
 .page-title {
   margin-left: 50px;
@@ -98,46 +109,53 @@ nav {
   margin-left: 8px;
 }
 .number {
+  display: flex;
+  justify-content: center;
   position: absolute;
-  right: 155px;
-  top: 2px;
+  width: 230px;
+  height: 40px;
+  right: 115px;
+  top: 0px;
   color: rgb(255, 169, 78);
-  font-size: 1.6em;
+  font-size: 1.4em;
+}
+.phone {
+  margin: 7px 10px;
+  font-size: .9em;
+  color: rgb(255, 169, 78);
+}
+.iphone {
+  display: none;
 }
 .nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 20px;
+  margin-top: 25px;
   color: rgb(31, 31, 31);
-  width: 90px;
-  height: 35px;
+  margin-left: 20px;
+  height: 30px;
   background-color: none;
-  text-decoration: none;
-  /* border-right: 1px solid whitesmoke; */
   font-weight: bold;
   font-size: 1em;
 }
 .nav:active {
-  background-color: gray;
-  height: 32px;
-  width: 85px;
-  margin: 20 5px
+  font-size: .9em
 }
 .nav:hover{
   border-bottom: 2px solid rgb(31, 31, 31);
 }
 .hidden-nav{
-  height: 75px;
+  height: 60px;
   width: 100%;
 }
 
 
 
 .bryce {
-  display: unset;
+  display: flex;
+  margin-top: 75px;
   justify-content: center;
-  height: 41.5vh;
   overflow: hidden;
   width: 100%;
   margin: auto;
@@ -146,18 +164,21 @@ nav {
 }
 .did-you-know {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
   background-color: rgb(255, 169, 78);
-  height: 50px;
+  min-height: 50px;
   width: 100%;
-  position: absolute;
-  bottom: 0px;
-}
+  color: white;
+  text-decoration: underline;
+  position: relative;
+} 
 .did {
   font-size: 1.7em;
-  margin-left: 50px;
+  margin-top: 15px;
   color: white;
+  text-align: center;
 }
 
 
@@ -172,14 +193,15 @@ nav {
   color: #6599ff;
   background-color: white;
   font-weight: bold;
+  margin: 0px;
+  position: absolute;
+  top: -12px;
 }
 .req-apt:hover{
   color: rgb(31, 31, 31)
 }
 .req-apt:active {
-  height: 25px;
-  width: 200px;
-  font-size: .7em;
+  font-size: .9em;
 }
 .reqAppt-text {
   font-size: 1em;
@@ -222,6 +244,7 @@ nav {
   color: white;
 }
 .submit {
+  background-color: white;
   margin: 10px;
   border-radius: 5px;
   color: #6599ff;
@@ -238,8 +261,9 @@ nav {
 
 .location { 
   display: flex;
-  flex-direction: column;
-  height: 50vh;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
   min-height: 420px;
 }
 .locate {
@@ -250,25 +274,26 @@ nav {
   text-decoration: underline;
 }
 .address-info {
-  height: 100%;
   display: flex;
-  justify-content: space-evenly;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
+  max-width: 400px;
+  height: 300px;
+  margin: 0px 20px;
 }
 .address-text {
   font-size: 1.5em;
 }
-.maps {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  box-shadow: 10px 10px 20px darkgrey;
-  
+iframe {
+  max-width: 100%;
+  height: 100%;
 }
-.map {
-  width: 400px;
-  height: 200px;
-  box-shadow: 10px 10px 20px darkgrey;
+.maps {
+  height: 420px;
+  width: 500px;
+  max-width: 98%;
+  max-height: 98vw
 }
 
 
@@ -276,12 +301,11 @@ nav {
 .bio {
   height: 42vh;
   min-height: 350px;
-  width: 100vw;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #6599ff;
-  opacity: .9;
 }
 .name {
   font-size: 2.5em;
@@ -295,7 +319,6 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: 75px;
   flex-direction: column;
   height: 100%;
   width: 100%;
@@ -303,7 +326,7 @@ nav {
 }
 .bio-img{
   max-height: 300px;
-  margin: 0px 75px;
+  margin: 20px 75px;
 }
 .family {
   margin-bottom: 30px;
@@ -311,6 +334,7 @@ nav {
 .bio-text{
   font-weight: bold;
   font-size: 1.2em;
+  margin-right: 75px;
   border-radius: 10px;
   text-align: center;
   padding: 5px 0px;
@@ -322,16 +346,15 @@ nav {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 44.7vh
 }
 .about-post {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  margin: 20px;
   margin: 0px 50px;
   margin-bottom: 50px;
+  height: unset;
 }
 .about-info-btns {
   position: absolute;
@@ -339,21 +362,17 @@ nav {
   top: 0px;
 }
 .about-post-image {
-  max-width: 200px;
+  max-width: 250px;
   max-height: 250px;
+  margin: 20px;
 }
 .about-post-title {
   text-decoration: underline;
-}
-.about-post-text-title {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  color: rgb(31, 31, 31);
-  margin: 50px;
+  margin: 20px;
 }
 .about-post-text {
   font-size: 1.3em;
+  margin: 20px;
 }
 .about-btns {
   display: flex;
@@ -427,26 +446,6 @@ nav {
 }
 
 
-.left {
-  height: 100vh;
-  background-color: rgb(255, 169, 78);
-  width: 200px;
-  position: fixed;
-  left: 0px;
-  top: 75px;
-  opacity: 1;
-}
-.right {
-  height: 100vh;
-  background-color: lightskyblue;
-  width: 200px;
-  position: fixed;
-  right: 0px;
-  top: 75px;
-  opacity: 1;
-}
-
-
 .add-post-btn {
   position: absolute;
   right: 80px;
@@ -483,7 +482,7 @@ nav {
 }
 .add-post-section {
   position: absolute;
-  top: 75px;
+  top: 60px;
   height: 42px;
   width: 100vw;
   background-color: #6599ff
@@ -606,7 +605,7 @@ nav {
   height: 100vh;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 .service-post {
   height: 450px;
@@ -696,4 +695,121 @@ footer{
   font-size: 2em;
   font-weight: bold;
   color: rgb(31, 31, 31);
+}
+
+
+@media(max-width: 950px) {
+  .bio {
+    flex-direction: column;
+    height: unset;
+  }
+  .bio-text {
+    margin: 0px 50px;
+  }
+  .bryce {
+    margin-top: 60px;
+  }
+  .menu {
+    font-size: 1.7em;
+  }
+  
+}
+
+@media(max-width: 900px) {
+  .location {
+    flex-direction: column;
+    height: unset;
+  }
+  .did-you-know {
+    margin-bottom: 50px;
+  }
+  .about-post {
+    flex-direction: column;
+  }
+}
+
+@media(max-width: 800px) {
+  
+  .nav {
+    display: none;
+  }
+  .number {
+    position: absolute;
+    top: 14px;
+    right: 80px;
+  }
+  .menu {
+    display: unset;
+  }
+  .drop-menu {
+    display: flex;
+  }
+  .drop-nav {
+    display: flex;
+  }
+  .address-info {
+    flex-direction: column;
+  }
+  .login {
+    display: none;
+  }
+}
+
+@media(max-width: 600px) {
+  .title {
+    bottom: 8px;
+    font-size: 1.5em;
+    width: 180px;
+    margin-left: 10px;
+    display: flex;
+    justify-content: center;
+  }
+  .sub-title {
+    font-size: .6em;
+    width: 180px;
+    position: absolute;
+    top: 30px;
+  }
+  nav {
+    height: 50px;
+  }
+  .bryce {
+    margin-top: 50px;
+  }
+  .drop-menu {
+    top: 50px;
+  }
+  .menu {
+    top: -5px;
+  }
+  .number {
+    top: 8px;
+  }
+  .add-post-section {
+    top: 50px;
+  }
+}
+
+@media(max-width: 500px) {
+  .number {
+    display: none;
+  }
+  .iphone {
+    display: unset;
+    position: absolute;
+    top: 5px;
+    right: 70px;
+    margin: 8px 10px;
+    font-size: 1.7em;
+    color: rgb(255, 169, 78);
+  }
+  .drop-menu {
+    right: 5px;
+  }
+  .menu {
+    right: 15px
+  }
+  .title {
+    margin-left: 30px;
+  }
 }
