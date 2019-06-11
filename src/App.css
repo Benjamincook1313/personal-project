@@ -232,16 +232,17 @@ nav {
 }
 .x {
   position: absolute;
-  top: 0px;
-  right: -4px;
+  top: -5px;
+  right: -5px;
   border: none;
   background: none;
-  color: #6599ff;
-  font-size: 1em;
+  color: white;
+  font-size: 1.2em;
   font-weight: bolder;
 }
 .x:hover {
-  color: white;
+  color: #6599ff;
+  text-emphasis-color: white;
 }
 .submit {
   background-color: white;
