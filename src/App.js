@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import { library } from '@fortawesome/fontawesome-svg-core'
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTooth, faBars } from '@fortawesome/free-solid-svg-icons'
+import { faTooth, faBars, faPhone } from '@fortawesome/free-solid-svg-icons'
 import { HashRouter, Switch, Route } from 'react-router-dom' 
 import Home from './components/Home/home'
 import About from './components/About/about'
@@ -16,7 +16,7 @@ import { connect } from 'react-redux'
 import axios from 'axios'
 import { MapContainer } from './components/Home/MapContainer';
 
-library.add(faTooth, faBars)
+library.add(faTooth, faBars, faPhone)
 
 class App extends Component {
 

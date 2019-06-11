@@ -19,7 +19,7 @@ class Contact extends Component {
       <div className='Contact'>
         <nav>
             <h1 className='page-title'>Contact</h1>
-            <h1 className='number'>(801) 590-8740</h1>
+            <a href='tel:801-834-8095'className='number'>(801) 590-8740</a>
             <div className='nav-container'>
               {this.props.loggedIn &&
               <div>

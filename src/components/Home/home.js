@@ -80,11 +80,12 @@ class Home extends Component {
 
         {/* Navigation */}
           <nav>
-            <h1 className='title'>Dr. Bruce A Pyper 
+            <h1 className='title'> Bruce A. Pyper 
               <div className='dmd'>DMD</div>
               <div className='sub-title'>Family & Cosmetic Dentistry</div>
             </h1>
-            <h1 className='number'>(801) 590-8740</h1>
+            <a href='tel:801-834-8095'className='number'><FontAwesomeIcon icon='phone' className='phone' />(801) 590-8740</a>
+            <a href='tel:801-834-8095'className='phone'><FontAwesomeIcon icon='phone' className='iphone' /></a>
             <div className='nav-container'>
               {this.props.loggedIn &&
               <div>
@@ -107,7 +108,7 @@ class Home extends Component {
               </div>
             }
           </nav>
-          <div className='hidden-nav' style={{height: 65}}></div>
+          {/* <div className='hidden-nav' style={{height: 70}}></div> */}
         {/* Navigation End */}
 
           {/* Hero Image */}         
@@ -126,37 +127,34 @@ class Home extends Component {
                 <img className="d-block w-100" src={Hawaii} alt="Fourth slide"></img>
               </div>
             </div>
-          <section className='did-you-know'>
-            <h1 className='did'>Did you know regular cleanings are crucial to having healthy teeth?</h1>
-            <button className='req-apt' onClick={() => this.setState({showReqAppt: !showReqAppt})}>
-              <h2 className='reqAppt-text'>Request an appointment</h2>
-            </button>
-          </section>
           </div>
+          <section className='did-you-know'>
+              <button className='req-apt' onClick={() => this.setState({showReqAppt: !showReqAppt})}>
+                <h2 className='reqAppt-text'>Request an appointment</h2>
+              </button>
+            <h1 className='did'>Did you know regular cleanings are crucial to having healthy teeth?</h1>
+          </section>
           {/* Hero Image End */}
 
           {/* LOCATION */}
           <div className='location'>
-            <h1 className='locate'>Location</h1>
-            <div className='address-info'>
+            {/* <h1 className='locate'>Location</h1> */}
               <div className="maps">
                 <iframe
                   src="https://maps.google.com/maps?q=Dr.%20Bruce%20A%20Pyper&t=&z=13&ie=UTF8&iwloc=&output=embed"
-                  width="400"
-                  height="300"
+                  width="500"
+                  height="420"
                   frameBorder="0"
-                  style={{ border: '1px solid rgb(31, 31, 31)' }}
                   allowFullScreen
                   title="map"
                 />
               </div>
-              <div>
+              <div className='address-info'>
                 <h2 >999 E Murray Holladay Rd.</h2>
                 <h2 className='address-text'>Suite #205</h2>
                 <h2 >Salt Lake City, Utah</h2>
                 <h2 className='address-text'>84117 </h2>
               </div>
-            </div>
               {/* <img className='map' src={Bigmap} alt=''/> */}
               {/* <img className='map' src={Map} alt=''/> */}
               
