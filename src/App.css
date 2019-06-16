@@ -376,7 +376,6 @@ iframe {
   margin: 20px;
   border-radius: 10px;
   text-align: center;
-  padding: 5px 0px;
 }
 
 .about {
@@ -744,7 +743,9 @@ footer{
   }
   .bio {
     flex-direction: column;
-    height: unset;
+  }
+  .bio-container {
+    margin: 20px;
   }
   .bryce {
     margin-top: 60px;

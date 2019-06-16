@@ -113,25 +113,25 @@ class Home extends Component {
               <div className="carousel-item active">
                 <img className="d-block w-100" src={Bryce} alt="First slide" data-interval='1000'></img>
                 <p className='carousel-text'>
-                  We strive to provide each patient with the highest quality dental work, We care and listen to all concerns of our patients and our #1 goal is for you to have a positive experience. 
+                  We strive to provide each patient with the highest quality dental work, We care and listen to all concerns of our patients and our #1 goal is for you to have a positive experience! 
                 </p>
               </div>
               <div className="carousel-item">
                 <img className="d-block w-100" src={Beach} alt="Second slide"></img>
                 <p className='carousel-text'>
-                  We strive to provide each patient with the highest quality dental work. We care and listen to all concerns of our patients and our #1 goal is for you to have a positive experience
+                  We strive to provide each patient with the highest quality dental work. We care and listen to all concerns of our patients and our #1 goal is for you to have a positive experience!
                 </p>
               </div>
               <div className="carousel-item">
                 <img className="d-block w-100" src={Yellowstone} alt="Third slide"></img>
                 <p className='carousel-text'>
-                We strive to provide each patient with the highest quality dental work, We care and listen to all concerns of our patients and our #1 goal is for you to have a positive experience 
+                We strive to provide each patient with the highest quality dental work, We care and listen to all concerns of our patients and our #1 goal is for you to have a positive experience!
                 </p>
               </div>
               <div className="carousel-item">
                 <img className="d-block w-100" src={Hawaii} alt="Fourth slide"></img>
                 <p className='carousel-text'>
-                We strive to provide each patient with the highest quality dental work, We care and listen to all concerns of our patients and our #1 goal is for you to have a positive experience 
+                We strive to provide each patient with the highest quality dental work, We care and listen to all concerns of our patients and our #1 goal is for you to have a positive experience!
                 </p>
               </div>
             </div>
@@ -174,7 +174,7 @@ class Home extends Component {
                 Dr. Pyper was born and raised in <span className='important-info'>Salt Lake City, Ut.</span> He attended Highland High School and then went on to the <span className='important-info'>University of Utah</span> for his <span className='important-info'>Bachelors of Science Degree.</span> He and his young family then moved to Portland, Oregon where Dr. Pyper recieved his <span className='important-info'>Dental Degree</span> from <span className='important-info'>Oregon Health Sciences University.</span> Dr. Pyper has been a member of <span className='important-info'> ( I. H. O. M. T. ) since 1998.</span> He strives to provide a positive dental experience for each patient, with a <span className='important-info'style={{textDecoration: 'underline'}}>Holistic approach</span>.
               </p>
               <p className='bio-text '>
-                Dr. Pyper feels fortunate to work along side his wife Carolee each day. He enjoys spending time with his Family, Woodworking, Hiking, Fishing, and Mountain Biking. He also enjoys being actively involved in his community as a dedicated <span className='important-info'>Boy Scout Master</span>, and has recieved the <span className='important-info'>Silver Beaver Award</span> for his dedicated service!
+                Dr. Pyper feels fortunate to work along side his wife Carolee each day. He enjoys spending time with his Family, Woodworking, Hiking, Fishing, and Mountain Biking. He also enjoys being actively involved in his community as a dedicated <span className='important-info'>Boy Scout Leader</span>, and has recieved the <span className='important-info'>Silver Beaver Award</span> for his dedicated service!
               </p>
             </div>
           </div>
