@@ -409,7 +409,7 @@ iframe {
 }
 .about-post-text {
   font-size: 1.3em;
-  margin: 75px;
+  margin: 50px;
 }
 .about-btns {
   display: flex;
@@ -505,7 +505,7 @@ iframe {
   background-color: rgb(31, 31, 31);
   position: fixed;
   top: 140px;
-  right: 20px;
+  right: 15vw;
   border-radius: 5px;
 }
 .addPost-x {
