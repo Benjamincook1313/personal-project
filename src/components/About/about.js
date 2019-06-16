@@ -86,7 +86,8 @@ class About extends Component {
       <div className='About'>
         <nav>
             <h1 className='page-title'>About</h1>
-            <a href='tel:801-834-8095'className='number'>(801) 590-8740</a>
+            <a href='tel:801-834-8095'className='number'><FontAwesomeIcon icon='phone' className='phone' />(801) 590-8740</a>
+            <a href='tel:801-834-8095'className='phone'><FontAwesomeIcon icon='phone' className='iphone' /></a>
             <div className='nav-container'>
               {this.props.loggedIn &&
                 <div>
@@ -147,7 +148,9 @@ class About extends Component {
             </div>
             { post }
             {!posts[0] &&
-            <div className='hidden' style={{height: 200, zIndex: '-100'}}></div>
+            <div className='hidden' style={{fontSize: 100, width: '100vw', textAlign: 'center', marginTop: 200}}>
+              <h1 className='default text'>Page Under Construction</h1>
+            </div>
             }
       </div>
     )

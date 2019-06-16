@@ -8,8 +8,8 @@ import { toggleLogin } from '../../Ducks/reducer'
 class Admin extends Component {
   constructor(props){
     super(props)
-    this.state={
-      apptReqs: []
+    this.state = {
+      apptReqs: [],
     }
   }
 
@@ -36,12 +36,15 @@ class Admin extends Component {
   render() {
     const { apptReqs } = this.state
     return(
-      <div >
+      <div>
         <nav>
           <h1 className='page-title'>Admin</h1>
           <div className='nav-container'>
-            <div className='hidden-nav'></div>
-            <button className='login' onClick={this.logOut} >Log out</button>
+            <div className='hidden-nav' ></div>
+            {this.props.loggedIn &&
+              <button className='login' onClick={this.logOut} >Log out</button>
+            }
+
             <Link to='/' style={{textDecoration: 'none'}}><div className='nav'>Home</div></Link>
             <Link to='/about' style={{textDecoration: 'none'}}><div className='nav'>About</div></Link>
             <Link to='/contact' style={{textDecoration: 'none'}}><div className='nav'>Contact</div></Link>
@@ -50,19 +53,18 @@ class Admin extends Component {
           </div>
         </nav>
         <div className='hidden-nav'></div>
-        <div className='admin'>
-          <ApptReqs apptReqs={ apptReqs } delete={this.deleteApptReq}/>
-        </div>
-        <footer></footer>
+        {this.props.loggedIn ?
+          <div className='admin'>
+            <ApptReqs apptReqs={ apptReqs } delete={this.deleteApptReq}/>
+          </div>: this.props.history.push('/')
+        }
       </div>
     )
   }
 }
 
 function mapStateToProps(reduxState){
-  return {
-    reduxState
-  }
+  return reduxState
 }
 
-export default connect(mapStateToProps,{ toggleLogin })(Admin)
+export default connect(mapStateToProps, { toggleLogin })(Admin);

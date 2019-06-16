@@ -45,6 +45,7 @@ class AboutPost extends Component {
           <p className='about-post-text' >{ post.info }</p>
         </div>
         <div className='about-between-post'></div>
+        
       </div>:
 
       <div className='edit-post'>

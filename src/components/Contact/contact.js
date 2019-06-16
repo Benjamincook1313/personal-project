@@ -19,7 +19,8 @@ class Contact extends Component {
       <div className='Contact'>
         <nav>
             <h1 className='page-title'>Contact</h1>
-            <a href='tel:801-834-8095'className='number'>(801) 590-8740</a>
+            <a href='tel:801-834-8095'className='number'><FontAwesomeIcon icon='phone' className='phone' />(801) 590-8740</a>
+            <a href='tel:801-834-8095'className='phone'><FontAwesomeIcon icon='phone' className='iphone' /></a>
             <div className='nav-container'>
               {this.props.loggedIn &&
               <div>
@@ -45,28 +46,26 @@ class Contact extends Component {
           <div className='hidden-nav'></div>
 
           <section className='contact'>
-            <div className='contact-infoWrapper'>
-              <div className='phone-addressWrapper'>
-                <div className='contact-info'>
-                  <h1>Phone</h1> 
-                  <h2>(801) 590-8740</h2>
-                </div>
-                <div className='contact-info'>
-                  <h1>Address</h1>
-                  <h2>999 E. Murray Holladay Rd.</h2>
-                  <h2>Salt Lake City, Ut 84117</h2 > 
-                  <p>#205</p>
-                </div>
+            <div>
+              <div className='contact-info'>
+                <p style={{textDecoration: 'underline'}}>Phone</p> 
+                <h2>(801) 590-8740</h2>
               </div>
               <div className='contact-info'>
-                <h1>Hours</h1>
-                <h2>Mon, Tues, Thurs</h2>
-                <p>(8:30am-5:00pm)</p>
-                <h2> Fri: </h2>
-                <p>(7:30am-2:00pm)</p>
-                <h2>Wed, Sat, Sun </h2>
-                <p>(closed)</p>
+                <p style={{textDecoration: 'underline'}}>Address</p>
+                <h2>999 E. Murray Holladay Rd.</h2>
+                <h2>Salt Lake City, Ut 84117</h2 > 
+                <h2>#205</h2>
               </div>
+            </div>
+            <div className='contact-info'>
+              <p style={{textDecoration: 'underline'}}>Hours</p>
+              <h2>(Mon, Tues, Thurs):</h2>
+              <h2>8:30am-5:00pm</h2>
+              <h2>Fri:</h2>
+              <h2>7:30am-2:00pm</h2>
+              <h2>(Wed, Sat, Sun):</h2>
+              <h1>closed</h1>
             </div>
           </section>
 

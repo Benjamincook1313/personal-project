@@ -1,8 +1,7 @@
-import axios from 'axios'
 
 const  initialState = {
   loggedIn: false,
-  menu: false,
+  menu: false
 }
 
 export const TOGGLE_LOGIN = 'TOGGLE_LOGIN'
@@ -18,11 +17,6 @@ export function displayMenu(){
   return {
     type: DISPLAY_MENU
   }
-}
-
-export function checkLoggedIn(){
-  axios.get('/loggedIn').then(res => res.data)
-  return 
 }
 
 export default function(state = initialState, action){

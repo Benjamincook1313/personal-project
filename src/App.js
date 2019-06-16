@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
 import { library } from '@fortawesome/fontawesome-svg-core'
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTooth, faBars, faPhone } from '@fortawesome/free-solid-svg-icons'
 import { HashRouter, Switch, Route } from 'react-router-dom' 
 import Home from './components/Home/home'
@@ -14,7 +13,6 @@ import Admin from './components/Admin/admin'
 import { toggleLogin } from './Ducks/reducer'
 import { connect } from 'react-redux'
 import axios from 'axios'
-import { MapContainer } from './components/Home/MapContainer';
 
 library.add(faTooth, faBars, faPhone)
 
@@ -29,7 +27,6 @@ class App extends Component {
   render() {
     return (
       <HashRouter>
-        
         <Switch>
           <Route path='/' exact component={ Home } />
           <Route path='/login' component={ Login } />
@@ -38,7 +35,6 @@ class App extends Component {
           <Route path='/contact' component={ Contact } />
           <Route path='/information' component={ Information } />
           <Route path='/admin' component={ Admin } />
-          <Route path='/map' component={MapContainer} />
         </Switch>
       </HashRouter>
     );

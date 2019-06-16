@@ -36,7 +36,7 @@ class InfoPost extends Component {
           {(this.props.loggedIn && !this.props.addPost) &&
             <div className='about-info-btns'>
               <button className='edit-btn' onClick={() => this.editTrue()}>edit</button>
-              <button className='delete-btn' onClick={() => this.props.delete(post.about_id)}>delete</button>
+              <button className='delete-btn' onClick={() => this.props.delete(post.info_id)}>delete</button>
             </div>
           }
         <div className='about-post' >

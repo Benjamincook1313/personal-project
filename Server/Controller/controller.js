@@ -1,5 +1,5 @@
 require('dotenv').config()
-const { AUTHTOKEN, ACCOUNTSID, EMAIL, PASSWORD } = process.env
+const { AUTHTOKEN, ACCOUNTSID, EMAIL, PASSWORD, OFFICE_EMAIL, PHONE_NUMBER } = process.env
 
 const accountSid = ACCOUNTSID
 const authToken = AUTHTOKEN
@@ -17,7 +17,7 @@ let transporter = nodemailer.createTransport({
 
 let mailOptions = {
   from : EMAIL,
-  to: 'benjamincook1313@gmail.com',
+  to: OFFICE_EMAIL,
   subject: 'Appointment Request',
   text: 'You have 1 new request to schedule an appontment!'
 }
@@ -27,7 +27,6 @@ module.exports = {
   checkForUser: (req, res) => {
     res.status(200).send(req.session.user)
   },
-
 
   addAboutPost: async (req, res) => {
     const { title, imageUrl, text } = req.body
@@ -99,8 +98,10 @@ module.exports = {
   },
   deleteInfoPost: async (req, res) => {
     const { id } = req.params
+    console.log(id)
     const posts = await req.app.get('db')
     .delete_info_post(id)
+    console.log(posts)
     res.status(200).send(posts)
   },
 
@@ -122,8 +123,8 @@ module.exports = {
 client.messages
   .create({
      body: 'New request from patient to schedule an appointment',
-     from: '+13852471514',
-     to: '+18018348095'
+     from: TWILIO_NUMBER,
+     to: PHONE_NUMBER
    })
   .then(message => console.log(message.sid));
     res.status(200).send('Request succesful')
