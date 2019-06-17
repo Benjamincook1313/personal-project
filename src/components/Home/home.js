@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { connect } from 'react-redux'
 import { toggleLogin, displayMenu } from '../../Ducks/reducer'
 
-import Bryce from '../Images/Carousel/Bryce.jpeg';
+import Bryce from '../Images/Carousel/bryce.jpeg';
 import Hawaii from '../Images/Carousel/Hawaii.jpeg';
 import Yellowstone from '../Images/Carousel/Yellowstone.jpg';
 import Beach from '../Images/Carousel/Beach.jpeg'
