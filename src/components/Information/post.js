@@ -49,7 +49,6 @@ class InfoPost extends Component {
         </div>
         <div className='about-between-post'></div>
       </div>:
-
       <div className='edit-post'>
         <input 
           className='edit-title'

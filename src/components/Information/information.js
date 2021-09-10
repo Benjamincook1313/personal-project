@@ -66,7 +66,6 @@ class Info extends Component {
   render(){
     const { posts, addPost, title, imageUrl, text } = this.state
     let post = posts.map((post) => {
-      
       return(
         <InformationPost 
           key={ post.info_id } 
@@ -81,6 +80,7 @@ class Info extends Component {
           />
       )
     })
+    
     return(
       <div className='About'>
         <nav>
